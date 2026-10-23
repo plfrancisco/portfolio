@@ -1,0 +1,94 @@
+/* Trajetória */
+.timeline-section {
+  padding: var(--section-spacing) 0;
+}
+
+.timeline-header {
+  margin-bottom: 2rem;
+}
+
+.timeline-header .section-title {
+  margin-top: 0.45rem;
+}
+
+.timeline-header .section-desc {
+  margin-top: 0.75rem;
+}
+
+.timeline-tabs {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-tabs button {
+  min-height: 44px;
+  padding: 0.5rem 0.1rem;
+  color: var(--muted);
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+}
+
+.timeline-tabs button:hover,
+.timeline-tabs button[aria-selected='true'] {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+.timeline-panel {
+  min-height: 22rem;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-period {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.timeline-entry h3 {
+  font-size: clamp(1.15rem, 1rem + 1vw, 1.5rem);
+}
+
+.timeline-organization {
+  margin-top: 0.1rem;
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+
+.timeline-summary {
+  margin-top: 0.65rem;
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+
+.timeline-thread {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 0.7rem + 0.2vw, 0.85rem);
+}
+
+.timeline-thread strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .timeline-entry {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .timeline-period {
+    font-size: 0.72rem;
+  }
+}

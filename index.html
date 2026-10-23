@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Lucas — Desenvolvedor de Software · IA &amp; Dados</title>
+  <meta name="description" content="Portfólio pessoal de Pedro Lucas Francisco — Desenvolvedor de Software, IA e Dados. FATEC Pompeia, Inova Skill 2026.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Hanken+Grotesk:wght@400..600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/network.css">
+  <link rel="stylesheet" href="css/shell.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/syntegra-twin.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/network-skills.css">
+  <link rel="stylesheet" href="css/timeline.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/project-stories.css">
+</head>
+<body>
+  <canvas id="network-canvas" class="network-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <div class="header-content">
+      <a href="#hero" class="wordmark" aria-label="Ir para o início">Pedro Lucas<span class="dot">.</span></a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav.hero">Início</a></li>
+          <li><a href="#syntegra" class="nav-link" data-i18n="nav.syntegra">Síntegra Twin</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Competências</a></li>
+          <li><a href="#timeline" class="nav-link" data-i18n="nav.timeline">Trajetória</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </nav>
+
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação mobile" aria-hidden="true">
+      <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+      <div class="mobile-nav-dialog">
+        <div class="mobile-nav-header">
+          <span class="mobile-nav-label" data-i18n="nav.menu">Navegação</span>
+          <button type="button" class="mobile-close-btn" id="mobile-close-btn" aria-label="Fechar menu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#hero" class="mobile-nav-link active" data-i18n="nav.hero">Início</a></li>
+          <li><a href="#syntegra" class="mobile-nav-link" data-i18n="nav.syntegra">Síntegra Twin</a></li>
+          <li><a href="#projects" class="mobile-nav-link" data-i18n="nav.projects">Projetos</a></li>
+          <li><a href="#skills" class="mobile-nav-link" data-i18n="nav.skills">Competências</a></li>
+          <li><a href="#timeline" class="mobile-nav-link" data-i18n="nav.timeline">Trajetória</a></li>
+          <li><a href="#contact" class="mobile-nav-link" data-i18n="nav.contact">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <aside class="side-rail" id="side-rail" aria-label="Acesso rápido e rede neural">
+    <div class="rail-socials">
+      <a href="https://linkedin.com/in/pedro-lucas-francisco" target="_blank" rel="noopener noreferrer" class="rail-link" aria-label="Perfil no LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.91 0-1.64.73-1.64 1.64s.73 1.64 1.64 1.64 1.64-.73 1.64-1.64-.73-1.64-1.64-1.64Z"/></svg>
+      </a>
+      <a href="https://github.com/plfrancisco" target="_blank" rel="noopener noreferrer" class="rail-link" aria-label="Perfil no GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/></svg>
+      </a>
+      <a href="https://wa.me/5514991132420" class="rail-link" id="rail-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7c-3 3 5 11 8 8l-2-2-2 1-2-2 1-2-2-3Z" fill="currentColor"/></svg>
+      </a>
+    </div>
+
+    <nav class="network-minimap" id="network-minimap" aria-label="Navegação em grafo">
+      <div class="minimap-track" aria-hidden="true"></div>
+      <ul class="minimap-nodes">
+        <li><button type="button" class="minimap-node active" data-target="hero" aria-label="Seção Início"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.hero">Início</span></button></li>
+        <li><button type="button" class="minimap-node" data-target="syntegra" aria-label="Seção Síntegra Twin"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.syntegra">Síntegra Twin</span></button></li>
+        <li><button type="button" class="minimap-node" data-target="projects" aria-label="Seção Projetos"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.projects">Projetos</span></button></li>
+        <li><button type="button" class="minimap-node" data-target="skills" aria-label="Seção Competências"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.skills">Competências</span></button></li>
+        <li><button type="button" class="minimap-node" data-target="timeline" aria-label="Seção Trajetória"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.timeline">Trajetória</span></button></li>
+        <li><button type="button" class="minimap-node" data-target="contact" aria-label="Seção Contato"><span class="node-dot"></span><span class="node-tooltip" data-i18n="nav.contact">Contato</span></button></li>
+      </ul>
+    </nav>
+
+    <div class="rail-footer">
+      <button type="button" class="lang-toggle" id="lang-toggle" aria-label="Alternar idioma">PT</button>
+    </div>
+  </aside>
+
+  <main id="app" class="main-content">
+    <section id="hero" class="site-section hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-eyebrow" data-i18n="hero.subtitle">Desenvolvedor de software · IA &amp; dados</p>
+          <h1 class="hero-title">
+            <span data-i18n="hero.nameFirst">Pedro</span>
+            <span class="hero-title-accent" data-i18n="hero.nameLast">Lucas</span>
+          </h1>
+          <p class="hero-bio" data-i18n="hero.bio">Estudante de Tecnologia em Sistemas Inteligentes na FATEC Pompeia. Estagiário no Laboratório de Solos da Fundação Shunji Nishimura e participante do Inova Skill 2026, onde atuei como desenvolvedor do Síntegra Twin pela Síntegra, empresa do Grupo Jacto.</p>
+
+          <div class="hero-actions">
+            <a href="#syntegra" class="btn btn-primary" data-i18n="hero.ctaSyntegra">Ver o Síntegra Twin →</a>
+            <a href="public/curriculo.pdf" class="btn btn-ghost" id="hero-resume-link" data-i18n="hero.ctaResume" download>Currículo ↓</a>
+          </div>
+
+          <a href="#syntegra" class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.badgeLabel">Síntegra Twin · Inova Skill 2026</span>
+          </a>
+        </div>
+
+        <figure class="hero-figure">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <img
+            src="public/character/wave.jpg"
+            alt="Ilustração 3D de Pedro Lucas acenando, iluminada por um brilho dourado"
+            class="hero-portrait"
+            data-i18n-alt="hero.imageAlt"
+            width="640"
+            height="710"
+          >
+        </figure>
+      </div>
+    </section>
+
+    <section id="syntegra" class="site-section">
+      <div class="container">
+        <div class="feat">
+          <span class="feat-num" aria-hidden="true">00</span>
+          <span class="tag" data-i18n="syntegra.badge">Destaque · nº 00</span>
+          <h2 data-i18n="syntegra.title">Síntegra Twin</h2>
+          <p class="feat-lead" data-i18n="syntegra.description">Uma pipeline multiagente para previsão de demanda.</p>
+          <span class="role-tag" data-i18n="syntegra.roleTag">meu papel: desenvolvimento e arquitetura do sistema</span>
+          <p class="syntegra-context" data-i18n="syntegra.context">Desenvolvido no programa Inova Skill 2026, com atuação pela Síntegra, empresa do Grupo Jacto, em parceria com CITAP, Mentto e Bluesfield Aceleradora.</p>
+
+          <div class="twin">
+            <div class="twin-stage" id="twinStage">
+              <canvas id="twinCanvas" aria-label="Visualização animada da pipeline de agentes do Síntegra Twin"></canvas>
+
+              <div class="twin-caption" id="twinCaption">
+                <span class="twin-caption-live" aria-hidden="true"></span>
+                <p class="twin-caption-text" id="twinCaptionText"></p>
+                <div class="twin-caption-dots" id="twinCaptionDots"></div>
+                <button type="button" class="twin-caption-resume" id="twinResumeBtn" data-i18n="syntegra.resumeNarration">▶ voltar à narração</button>
+              </div>
+
+              <div class="twin-hud" id="twinHud">
+                <div><span data-i18n="syntegra.hud.events">eventos</span> <b id="twinHudEvents">0</b></div>
+                <div><span data-i18n="syntegra.hud.context">contexto</span> <b id="twinHudContext">—</b></div>
+                <div>MAPE <b id="twinHudMape">—</b></div>
+              </div>
+
+              <div class="twin-controls">
+                <button type="button" class="twin-play" id="twinPlayBtn" aria-label="Pausar animação">❚❚</button>
+                <span data-i18n="syntegra.speedLabel">veloc.</span>
+                <input type="range" id="twinSpeed" min="0.3" max="2.2" step="0.1" value="1" aria-label="Velocidade da animação">
+              </div>
+
+              <div class="twin-tooltip" id="twinTooltip"></div>
+            </div>
+
+            <div class="twin-panel" id="twinPanel">
+              <!-- Preenchido por js/syntegra-twin.js: estado idle (chips de cenário) ou detalhe de um agente. -->
+            </div>
+          </div>
+
+          <p class="syntegra-context" data-i18n="syntegra.evaluationContext">Validação prática retrospectiva de 8 produtos, com dados de 2025. Resultado informado pelo desenvolvedor.</p>
+          <p class="syntegra-context" data-i18n="syntegra.baselineContext">No mesmo ano, o planejamento anterior registrou 35% de acerto trimestral. Os resultados usam períodos de agregação diferentes e não constituem uma comparação direta.</p>
+          <p class="twin-illustrative" data-i18n="syntegra.illustrativeNote">Fluxo e curva ilustrativos. Os 80% se referem à validação prática semestral informada pelo desenvolvedor, não ao complemento do erro trimestral do relatório.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="site-section projects-section">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-badge" aria-hidden="true">01</span>
+          <h2 class="section-title" data-i18n="projects.title">Projetos</h2>
+          <p class="section-desc" data-i18n="projects.subtitle">Projetos concluídos e próximos passos em IA, dados e engenharia</p>
+        </div>
+        <div class="project-spotlight" id="project-spotlight"></div>
+        <div class="project-list" id="project-list"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="site-section skills-section">
+      <div class="container">
+        <div class="skills-header">
+          <span class="section-badge" aria-hidden="true">02</span>
+          <h2 class="section-title" data-i18n="skills.title">Rede de Competências</h2>
+          <p class="section-desc" data-i18n="skills.subtitle">Linguagens, frameworks e ferramentas conectadas</p>
+        </div>
+
+        <div class="skills-network-layout">
+          <div class="skills-canvas-wrap">
+            <canvas id="skillsCanvas" role="img"></canvas>
+          </div>
+
+          <div class="skills-fallback">
+            <div class="skills-fallback-header">
+              <span class="tag" data-i18n="skills.fallbackLabel">Tecnologias conectadas</span>
+              <button type="button" class="skills-clear" id="skillsClear" data-i18n="skills.clearFilter">Limpar filtro</button>
+            </div>
+            <div class="skills-chip-list" id="skillsChipList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="site-section timeline-section">
+      <div class="container">
+        <div class="timeline-header">
+          <span class="section-badge" data-i18n="timeline.kicker">Trajetória — a virada de chave</span>
+          <h2 class="section-title" data-i18n="timeline.title">Trajetória</h2>
+          <p class="section-desc" data-i18n="timeline.subtitle">Formação acadêmica e histórico profissional</p>
+        </div>
+
+        <div class="timeline-tabs" role="tablist">
+          <button type="button" role="tab" id="timeline-tab-experience" aria-controls="timeline-panel" aria-selected="true" data-timeline-tab="experience" data-i18n="timeline.tabs.experience">Experiência</button>
+          <button type="button" role="tab" id="timeline-tab-education" aria-controls="timeline-panel" aria-selected="false" data-timeline-tab="education" data-i18n="timeline.tabs.education">Formação</button>
+        </div>
+
+        <div id="timeline-panel" class="timeline-panel" role="tabpanel" aria-labelledby="timeline-tab-experience" tabindex="0"></div>
+
+        <p class="timeline-thread">
+          <span data-i18n="timeline.threadLabel">o fio condutor</span>
+          <span aria-hidden="true"> → </span>
+          <strong data-i18n="timeline.thread">precisão · diagnóstico · pensamento sistêmico</strong>
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="site-section contact-section">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-portrait-wrap">
+            <span class="section-badge" data-i18n="contact.kicker">Contato</span>
+            <div class="contact-glow" aria-hidden="true"></div>
+            <img class="contact-portrait" src="public/character/thumbs-up.jpg" width="480" height="533" data-i18n-alt="contact.imageAlt" alt="Pedro Lucas fazendo sinal de joinha">
+          </div>
+          <h2 class="contact-title" data-i18n="contact.headline">Vamos conversar sobre tecnologia?</h2>
+          <p class="contact-location" data-i18n="contact.location">Oriente, SP — Brasil</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" id="contact-whatsapp" href="https://wa.me/5514991132420" target="_blank" rel="noopener noreferrer" data-i18n="contact.whatsapp">Conversar no WhatsApp</a>
+            <a class="btn btn-ghost" id="contact-linkedin" href="#" target="_blank" rel="noopener noreferrer" data-i18n="contact.linkedin">LinkedIn ↗</a>
+            <a class="btn btn-ghost" id="contact-github" href="#" target="_blank" rel="noopener noreferrer" data-i18n="contact.github">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Pedro Lucas Francisco</p>
+      <p class="footer-stack" data-i18n="footer.stack">HTML · CSS · JavaScript Vanilla</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

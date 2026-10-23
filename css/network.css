@@ -1,0 +1,161 @@
+/* CÃ©u ambiente compartilhado por todas as seÃ§Ãµes */
+.network-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* O conteÃºdo fica sobre o cÃ©u sem criar uma nova caixa de fundo */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mini-mapa em grafo */
+.network-minimap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.minimap-track {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 50%;
+  width: 1px;
+  background: var(--line);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.minimap-nodes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.minimap-node {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.minimap-node:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.node-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--raised-2);
+  border: 1px solid var(--line-2);
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.minimap-node:hover .node-dot {
+  transform: scale(1.3);
+  border-color: var(--gold);
+}
+
+.minimap-node.active .node-dot {
+  background: var(--gold);
+  border-color: var(--gold-ink);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.node-tooltip {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  padding: 0.25rem 0.6rem;
+  background: var(--raised-2);
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.minimap-node:hover .node-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Entrada de seÃ§Ãµes: o cÃ©u muda de foco em vez de desenhar uma espinha */
+.site-section {
+  opacity: 0.2;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.site-section.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .network-minimap {
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+
+  .minimap-track {
+    top: 50%;
+    bottom: auto;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    height: 1px;
+    transform: translateY(-50%);
+  }
+
+  .minimap-nodes {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .minimap-node {
+    width: 36px;
+    height: 44px;
+  }
+
+  .node-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .minimap-node {
+    width: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

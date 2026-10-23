@@ -1,0 +1,131 @@
+.hero-section {
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5.5rem);
+  border-bottom: 1px solid var(--line);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  overflow-x: clip;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: var(--muted);
+}
+
+.hero-title {
+  margin-top: 0.6rem;
+  font-size: clamp(2.8rem, 2vw + 2.4rem, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-title-accent {
+  color: var(--gold);
+}
+
+.hero-bio {
+  margin-top: 1.25rem;
+  max-width: 46ch;
+  color: var(--dim);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+/* Badge que substitui a antiga faixa de estatísticas: um destaque real, não uma fileira de números */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-pill);
+  background: rgba(242, 178, 76, 0.1);
+  border: 1px solid var(--gold-deep);
+  color: var(--gold-ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  box-shadow: 0 0 24px -8px rgba(242, 178, 76, 0.55);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.hero-badge:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 32px -6px rgba(242, 178, 76, 0.75);
+}
+
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px 2px rgba(242, 178, 76, 0.7);
+}
+
+.hero-figure {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 400px);
+  aspect-ratio: 9 / 10;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -18% -12% -8% -12%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 55% 42%, rgba(242, 178, 76, 0.55), rgba(242, 178, 76, 0.12) 40%, transparent 70%);
+  filter: blur(10px);
+}
+
+.hero-portrait {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  /* Máscara radial suave: o retrato "emerge" do preto em vez de mostrar o fundo #0E1116 original da imagem */
+  -webkit-mask-image: radial-gradient(ellipse 68% 72% at 50% 46%, #000 58%, transparent 84%);
+  mask-image: radial-gradient(ellipse 68% 72% at 50% 46%, #000 58%, transparent 84%);
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: auto;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-figure {
+    order: -1;
+    width: min(72%, 300px);
+    margin-inline: auto;
+  }
+
+  .hero-role,
+  .hero-bio {
+    max-width: none;
+  }
+}
